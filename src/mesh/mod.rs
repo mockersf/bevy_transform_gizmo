@@ -25,25 +25,25 @@ pub fn build_gizmo(
     mut meshes: ResMut<Assets<Mesh>>,
     mut materials: ResMut<Assets<GizmoMaterial>>,
 ) {
-    let axis_length = 1.3;
+    let axis_length = 1.;
     let arc_radius = 1.;
     let plane_size = axis_length * 0.25;
     let plane_offset = plane_size / 2. + axis_length * 0.2;
     // Define gizmo meshes
     let arrow_tail_mesh = meshes.add(Mesh::from(shape::Capsule {
-        radius: 0.04,
+        radius: 0.02,
         depth: axis_length,
         ..Default::default()
     }));
     let cone_mesh = meshes.add(Mesh::from(cone::Cone {
-        height: 0.25,
-        radius: 0.10,
+        height: 0.2,
+        radius: 0.08,
         ..Default::default()
     }));
     let plane_mesh = meshes.add(Mesh::from(shape::Plane::from_size(plane_size)));
     let rotation_mesh = meshes.add(Mesh::from(truncated_torus::TruncatedTorus {
         radius: arc_radius,
-        ring_radius: 0.04,
+        ring_radius: 0.02,
         ..Default::default()
     }));
     //let cube_mesh = meshes.add(Mesh::from(shape::Cube { size: 0.15 }));
