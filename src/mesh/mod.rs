@@ -189,5 +189,6 @@ pub fn build_gizmo(
         },
         InternalGizmoCamera,
         RenderLayers::layer(12),
+        UiCameraConfig { show_ui: false },
     ));
 }
